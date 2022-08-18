@@ -6,7 +6,7 @@ The algorithm doesn't get you, we get that a lot. Maybe you want to rediscover t
 
 You can use this tool to find a pre-generated playlist of every song that made the Top 10 in the US for the years you select. 
 
-This originally appeared on [Datafantic.com](https://datafantic.com).
+This originally appeared on [Datafantic.com](https://www.datafantic.com/what-songs-were-popular-when-i-was-in-high-school).
 """)
 
 df = pd.read_csv("playlists.csv")
@@ -27,12 +27,7 @@ if st.button('Submit'):
         playlist = "Ooops, it looks like we didn't make that playlist yet. Playlists with a range of 1-20 years were created. Try again with a more narrow year range."
 
     if isinstance(playlist, dict):
-        link = f"### Your Spotify Playlist: [{playlist['name']}](playlist['link'])"
+        link = f"### Your Spotify Playlist: [{playlist['name']}]({playlist['link']})"
         st.markdown(link, unsafe_allow_html=True)
     else:
         st.markdown(playlist)
-    
-
-
-
-
